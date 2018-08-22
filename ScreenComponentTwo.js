@@ -2,8 +2,10 @@ import React from 'react';
 import { Button, View } from 'react-native';
 
 export default class ScreenComponentTwo extends React.Component {
-  static navigationOptions = {
-    title: 'Second screen',
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerTitle: <Button title="Title" onPress={()=>navigation.navigate("RouteNameThree",{number:11})}/>,
+    };
   };
   
   render() {

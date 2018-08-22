@@ -26,5 +26,19 @@ Navigators, routes, and screen components
   - The screen component can also be another navigator. (Nest)
 
 
-  ## Usage
-  - Create navigator
+## Usage
+- Create navigator
+
+- Pass parameter to screen
+
+- Pass parameter between router
+```
+this.props.navigation.navigate('RouteName', {
+ paramName: 'value-of-param'
+});
+```
+- Navigation option
+
+- Compose navigatior
+```
+```
