@@ -2,23 +2,15 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 //
-import AppNavigator from './navigation/AppNavigator';
+import DrawerNavDemo from './DrawerNavDemo'
+import TabNavDemo from './TabNavDemo'
+import StackNavDemo from './StackNavDemo'
+import CombineNavDemo from './CombineNavDemo'
 
 export default class App extends React.Component {
   render() {
     return (
-      <AppNavigator />
+      <DrawerNavDemo/>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: 130,
-    paddingHorizontal: 20,
-  },
-});
