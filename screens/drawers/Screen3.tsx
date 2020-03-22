@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
-import { styles } from '../../styles.js'
+import { styles } from '../../styles'
 
 const Screen3 = () =>
   <View style={styles.center}>

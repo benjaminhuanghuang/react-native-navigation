@@ -1,46 +1,27 @@
+import React, {Component} from 'react'
 import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from "@react-navigation/stack";
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import { Ionicons } from '@expo/vector-icons';
+//
+import Tab1 from "./screens/tabs/Tab1";
+import Tab2 from "./screens/tabs/Tab2";
+import Tab3 from "./screens/tabs/Tab3";
 
 const MaterialBottomTabs = createMaterialBottomTabNavigator();
-const MaterialTopTabs = createMaterialTopTabNavigator();;
+const MaterialTopTabs = createMaterialTopTabNavigator();
+const Stack = createStackNavigator();
+
+
 
 export default class App extends Component {
-
-  createHomeStack = () =>
+  createHomeStackNavigator = () => (
     <Stack.Navigator>
-      <Stack.Screen
-        name="Home"
-        children={this.createDrawer}
-        options={{
-          title: "My Feed",
-          headerStyle: { backgroundColor: "black" },
-          headerTintColor: "white"
-        }}
-      />
-      <Stack.Screen
-        name="Detail"
-        component={Detail}
-        options={{
-          title: "Detail Screen",
-          headerStyle: { backgroundColor: "blue" },
-          headerTintColor: "white"
-        }}
-      />
       <Stack.Screen name="Bottom Tabs" children={this.createBottomTabs} />
       <Stack.Screen name="Top Tabs" children={this.createTopTabs} />
     </Stack.Navigator>
-
-  createDrawer = () =>
-    <Drawer.Navigator>
-      <Drawer.Screen name="Feed" component={Feed} />
-      <Drawer.Screen name="Contacts" component={Screen1} />
-      <Drawer.Screen name="Favorites" component={Screen2} />
-      <Drawer.Screen name="Settings" component={Screen3} />
-    </Drawer.Navigator>
-
+  );
   createTopTabs = (props) => {
     return <MaterialTopTabs.Navigator>
       <MaterialTopTabs.Screen
@@ -88,7 +69,7 @@ export default class App extends Component {
   render() {
     return (
       <NavigationContainer>
-        {this.createHomeStack()}
+        {this.createHomeStackNavigator()}
       </NavigationContainer>
     );
   }

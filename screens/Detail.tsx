@@ -8,7 +8,7 @@ class Detail extends Component {
 
   render() {
     return (
-      <View style={styles.center}>
+      <View style={styles.screenContainer}>
         <Text style={styles.title}>{this.props.route.params.screenName}</Text>
         {
           Platform.select({

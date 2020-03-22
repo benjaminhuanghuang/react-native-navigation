@@ -8,7 +8,7 @@ class Feed extends Component {
   render() {
     let detailResult = this.props.route.params;
     return (
-      <View style={styles.center}>
+      <View style={styles.screenContainer}>
         <Text style={styles.title}>
           {detailResult ? detailResult.data : 'Navigation Drawer'}
         </Text>

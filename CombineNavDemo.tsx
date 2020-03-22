@@ -1,4 +1,4 @@
-import react, { Component } from "react";
+import React, { Component } from "react";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
@@ -6,8 +6,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-//
+import { Ionicons } from '@expo/vector-icons';
+
+
 import Screen1 from "./screens/drawers/Screen1";
 import Screen2 from "./screens/drawers/Screen2";
 import Screen3 from "./screens/drawers/Screen3";
@@ -19,7 +20,6 @@ import Tab3 from "./screens/tabs/Tab3";
 import Feed from "./screens/Feed";
 import Detail from "./screens/Detail";
 
-Icon.loadFont();
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -31,7 +31,7 @@ export default class App extends Component {
     <Stack.Navigator>
       <Stack.Screen
         name="Home"
-        children={this.createDrawer}
+        children={this.createDrawerNavigator} // Show home self
         options={{
           title: "My Feed",
           headerStyle: { backgroundColor: "black" },
@@ -52,7 +52,7 @@ export default class App extends Component {
     </Stack.Navigator>
   );
 
-  createDrawer = () => (
+  createDrawerNavigator = () => (
     <Drawer.Navigator>
       <Drawer.Screen name="Feed" component={Feed} />
       <Drawer.Screen name="Contacts" component={Screen1} />

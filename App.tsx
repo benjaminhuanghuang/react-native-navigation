@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 //
@@ -7,7 +7,10 @@ import TabNavDemo from './TabNavDemo'
 import StackNavDemo from './StackNavDemo'
 import CombineNavDemo from './CombineNavDemo'
 
-export default class App extends React.Component {
+
+import IconTester from './IconTester'
+
+export default class App extends Component {
   render() {
     return (
       <CombineNavDemo/>
