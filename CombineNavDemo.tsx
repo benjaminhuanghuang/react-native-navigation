@@ -11,12 +11,13 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Screen1 from "./screens/drawers/Screen1";
 import Screen2 from "./screens/drawers/Screen2";
 import Screen3 from "./screens/drawers/Screen3";
+
 import Tab1 from "./screens/tabs/Tab1";
 import Tab2 from "./screens/tabs/Tab2";
 import Tab3 from "./screens/tabs/Tab3";
 
-import Feed from "./Feed";
-import Detail from "./Detail";
+import Feed from "./screens/Feed";
+import Detail from "./screens/Detail";
 
 Icon.loadFont();
 
@@ -26,7 +27,7 @@ const MaterialBottomTabs = createMaterialBottomTabNavigator();
 const MaterialTopTabs = createMaterialTopTabNavigator();
 
 export default class App extends Component {
-  createHomeStack = () => (
+  createHomeStackNavigator = () => (
     <Stack.Navigator>
       <Stack.Screen
         name="Home"
@@ -113,6 +114,6 @@ export default class App extends Component {
   };
 
   render() {
-    return <NavigationContainer>{this.createHomeStack()}</NavigationContainer>;
+    return <NavigationContainer>{this.createHomeStackNavigator()}</NavigationContainer>;
   }
 }

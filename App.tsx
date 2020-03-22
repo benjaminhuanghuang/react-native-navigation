@@ -10,7 +10,7 @@ import CombineNavDemo from './CombineNavDemo'
 export default class App extends React.Component {
   render() {
     return (
-      <DrawerNavDemo/>
+      <CombineNavDemo/>
     );
   }
 }
