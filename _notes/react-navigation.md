@@ -1,7 +1,5 @@
 
 
-
-
 ## Tab Navigation
 
 ## Stack Navigator

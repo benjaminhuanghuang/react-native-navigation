@@ -13,7 +13,7 @@ import IconTester from './IconTester'
 export default class App extends Component {
   render() {
     return (
-      <CombineNavDemo/>
+      <DrawerNavDemo/>
     );
   }
 }

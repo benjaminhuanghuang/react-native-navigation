@@ -3,12 +3,14 @@ import { View, Text, Button, Platform, TouchableOpacity } from "react-native";
 
 import { styles } from "../styles";
 
-interface FeedProps {}
-const Feed: React.SFC<FeedProps> = (): JSX.Element => {
+interface FeedProps {
+  navigation: any
+}
+const Feed: React.SFC<FeedProps> = (props): JSX.Element => {
   return (
     <View style={styles.screenContainer}>
       <Text style={styles.title}>Feed</Text>
-      <Button title="Go to" onPress={() => {}}></Button>
+      <Button title="Go to" onPress={() => {props.navigation.navigate('Detail')}}></Button>
     </View>
   );
 };
